@@ -11,6 +11,8 @@ import { ContactComponent } from "./contact/contact.component";
 import { AboutUserComponent } from "./about/about-user.component";
 import { NotFoundComponent } from "./not-found/not-found.component";
 
+import { UserService } from "./shared/services/user.service";
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -24,6 +26,9 @@ import { NotFoundComponent } from "./not-found/not-found.component";
     ContactComponent,
     AboutUserComponent,
     NotFoundComponent
+  ],
+  providers: [
+    UserService
   ],
   bootstrap: [AppComponent]
 })
