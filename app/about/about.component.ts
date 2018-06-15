@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 import { User } from "../shared/models/user";
-import { UserService } from "../shared/services/user.service";
 
 @Component({
   selector: "about-page",
@@ -19,7 +19,7 @@ import { UserService } from "../shared/services/user.service";
     `
   ],
   template: `
-  <div class="row" *ngIf="users">
+  <div class="row">
     <div class="col-sm-4" *ngFor="let user of users">
       <div class="profile-card" [routerLink]="['/about', user.username]">
         <img [src]="user.avatar" class="img-responsive img-circle">
@@ -35,12 +35,19 @@ import { UserService } from "../shared/services/user.service";
 export class AboutComponent implements OnInit {
   users: User[];
   
-  constructor(private service: UserService) { }
+  constructor(private actRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    /* Inspite getting from the services we getting from resolve routing
     this.service
         .getUsers()
         .then(usrs => this.users = usrs);
+    */
+    this.actRoute.data
+        .subscribe((routeData: {rUsers: User[]}) => {
+          console.log('888-RouteData-🛬', routeData);
+          this.users = routeData.rUsers;
+        })
   }
 
 }
