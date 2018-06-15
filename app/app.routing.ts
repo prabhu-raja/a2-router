@@ -9,6 +9,11 @@ export const appRoutes: Routes = [
         path:'',
         component: HomeComponent
     },
+    // for lazy loading - about
+    {
+        path: 'about',
+        loadChildren: 'app/about/about.module#AboutModule'
+    },
     {
         path: 'contact',
         component: ContactComponent
