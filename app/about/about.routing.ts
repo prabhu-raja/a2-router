@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about.component';
 import { AboutUserComponent } from './about-user.component';
 import { AboutSectionComponent } from "./about-section.component";
+import { AboutUsersResolve } from "./about-resolve.service";
 
 export const abtRoutes: Routes =[
     // for lazy loading - about
@@ -13,8 +14,8 @@ export const abtRoutes: Routes =[
             {
                 path: '',
                 component: AboutComponent,
-                data: {
-                    someMsg: 'this is my data message🌴'
+                resolve: {
+                    rUsers: AboutUsersResolve
                 }
             },
             {

@@ -6,6 +6,7 @@ import { AboutUserComponent } from "./about-user.component";
 import { AboutSectionComponent } from "./about-section.component";
 // Services
 import { UserService } from "../shared/services/user.service";
+import { AboutUsersResolve } from "../about/about-resolve.service";
 // Routing
 import { abtRouting } from "./about.routing";
 
@@ -21,7 +22,8 @@ import { abtRouting } from "./about.routing";
         AboutSectionComponent
     ],
     providers: [
-        UserService
+        UserService,
+        AboutUsersResolve
     ]
 })
 export class AboutModule { }
