@@ -4,6 +4,7 @@ import { AboutComponent } from './about.component';
 import { AboutUserComponent } from './about-user.component';
 import { AboutSectionComponent } from "./about-section.component";
 import { AboutUsersResolve } from "./about-resolve.service";
+import { AboutUserResolve } from "./about-user-resolve.service";
 
 export const abtRoutes: Routes =[
     // for lazy loading - about
@@ -20,7 +21,10 @@ export const abtRoutes: Routes =[
             },
             {
                 path: ':username',
-                component: AboutUserComponent
+                component: AboutUserComponent,
+                resolve: {
+                    rUser: AboutUserResolve
+                }
             }
         ]
     }
