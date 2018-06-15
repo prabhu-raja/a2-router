@@ -12,7 +12,10 @@ export const abtRoutes: Routes =[
         children: [
             {
                 path: '',
-                component: AboutComponent
+                component: AboutComponent,
+                data: {
+                    someMsg: 'this is my data message🌴'
+                }
             },
             {
                 path: ':username',
