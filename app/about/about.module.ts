@@ -3,6 +3,7 @@ import { CommonModule } from "@angular/common";
 // Components
 import { AboutComponent } from "./about.component";
 import { AboutUserComponent } from "./about-user.component";
+import { AboutSectionComponent } from "./about-section.component";
 // Services
 import { UserService } from "../shared/services/user.service";
 // Routing
@@ -16,7 +17,8 @@ import { abtRouting } from "./about.routing";
      ],
     declarations: [ 
         AboutComponent,
-        AboutUserComponent
+        AboutUserComponent,
+        AboutSectionComponent
     ],
     providers: [
         UserService
