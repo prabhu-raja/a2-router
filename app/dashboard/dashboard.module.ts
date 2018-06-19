@@ -7,6 +7,9 @@ import { DashboardUsersHomeComponent } from './users/dashboard-users-home.compon
 import { DashboardUserDetailsComponent } from './users/dashboard-user-details.component';
 // Routing
 import { dbRouting } from "./dashboard.routing";
+// Services
+import { UserService } from "../shared/services/user.service";
+
 
 @NgModule({
     imports: [
@@ -20,7 +23,7 @@ import { dbRouting } from "./dashboard.routing";
         DashboardUserDetailsComponent
     ],
     providers: [
-
+        UserService
     ]
 })
 export class DashboardModule {

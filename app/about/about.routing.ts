@@ -15,6 +15,7 @@ export const abtRoutes: Routes =[
             {
                 path: '',
                 component: AboutComponent,
+                // with resolve
                 resolve: {
                     rUsers: AboutUsersResolve
                 }
@@ -22,6 +23,7 @@ export const abtRoutes: Routes =[
             {
                 path: ':username',
                 component: AboutUserComponent,
+                // with resolve
                 resolve: {
                     rUser: AboutUserResolve
                 }
