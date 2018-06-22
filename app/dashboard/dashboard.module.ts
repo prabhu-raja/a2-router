@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { FormsModule } from '@angular/forms';
 // Components
 import { DashboardComponent } from "./dashboard.component";
 import { DashboardUsersComponent } from './users/dashboard-users.component';
@@ -14,6 +15,7 @@ import { UserService } from "../shared/services/user.service";
 @NgModule({
     imports: [
         CommonModule,
+        FormsModule,
         dbRouting
     ],
     declarations: [
