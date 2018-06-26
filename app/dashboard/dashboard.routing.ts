@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard.component';
 import { DashboardUsersComponent } from './users/dashboard-users.component';
 import { DashboardUsersHomeComponent } from './users/dashboard-users-home.component';
 import { DashboardUserDetailsComponent } from './users/dashboard-user-details.component';
+import { AuthGuard } from '../shared/guards/auth-guard.service';
 
 export const dbRoutes: Routes = [
     {
@@ -11,11 +12,13 @@ export const dbRoutes: Routes = [
         children: [
             {
                 path: '',
-                component:  DashboardComponent
+                component:  DashboardComponent,
+                canActivate: [AuthGuard]
             },
             {
                 path: 'users',
                 component: DashboardUsersComponent,
+                canActivateChild: [AuthGuard],
                 children: [
                     {
                         path: '',

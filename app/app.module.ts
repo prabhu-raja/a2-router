@@ -12,6 +12,9 @@ import { HomeComponent } from "./home/home.component";
 import { ContactComponent } from "./contact/contact.component";
 import { NotFoundComponent } from "./not-found/not-found.component";
 
+// Services
+import { AuthGuard } from "./shared/guards/auth-guard.service";
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -28,6 +31,7 @@ import { NotFoundComponent } from "./not-found/not-found.component";
     NotFoundComponent
   ],
   providers: [
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
