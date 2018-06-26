@@ -60,4 +60,12 @@ export class DashboardUserDetailsComponent implements OnInit {
         this.router.navigate(['/dashboard/users']);
     }
 
+    canDeactivate() {
+        console.log('👞Trying to Exit from User Details🏃🏻‍♂️');
+        if(this.user.name !== this.editName) {
+            return window.confirm('Discard changes?');
+        }
+        return true;
+    }
+
 }

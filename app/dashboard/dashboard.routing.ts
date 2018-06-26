@@ -5,6 +5,7 @@ import { DashboardUsersComponent } from './users/dashboard-users.component';
 import { DashboardUsersHomeComponent } from './users/dashboard-users-home.component';
 import { DashboardUserDetailsComponent } from './users/dashboard-user-details.component';
 import { AuthGuard } from '../shared/guards/auth-guard.service';
+import { CanDeactivateGuard } from "../shared/guards/can-deacivate-guard.service";
 
 export const dbRoutes: Routes = [
     {
@@ -26,7 +27,8 @@ export const dbRoutes: Routes = [
                     },
                     {
                         path: ':username',
-                        component: DashboardUserDetailsComponent
+                        component: DashboardUserDetailsComponent,
+                        canDeactivate: [CanDeactivateGuard]
                     }
                 ]
             }
